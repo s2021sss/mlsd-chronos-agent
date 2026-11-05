@@ -35,6 +35,7 @@ src/chronos_agent/            # код сервиса
 pyproject.toml                # зависимости и настройки ruff
 uv.lock                       # зафиксированные версии зависимостей
 .pre-commit-config.yaml       # pre-commit хуки
+.github/workflows/checks.yml  # CI: pre-commit на каждый push и PR
 ```
 
 ## Разработка

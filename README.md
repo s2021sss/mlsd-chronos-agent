@@ -31,6 +31,10 @@ Google Calendar API и Google Tasks API.
 
 ```text
 docs/                         # дизайн-документ
+data/                         # наборы для оценки, источники в data/README.md
+notebooks/                    # EDA
+reports/figures/              # графики из ноутбуков
+scripts/                      # загрузка и подготовка данных
 src/chronos_agent/            # код сервиса
 pyproject.toml                # зависимости и настройки ruff
 uv.lock                       # зафиксированные версии зависимостей

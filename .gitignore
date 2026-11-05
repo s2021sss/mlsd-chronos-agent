@@ -13,7 +13,7 @@ client_secret*.json
 secrets/
 
 # Локальные данные и артефакты
-data/
+data/raw/
 *.sqlite
 *.sqlite3
 *.db

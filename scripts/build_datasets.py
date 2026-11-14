@@ -29,7 +29,7 @@ SEED_ACTIONS = {
     "create_event": ("create", "event"),
     "create_task": ("create", "task"),
     "move_event": ("update", "event"),
-    "complete_task": None,
+    "complete_task": ("complete", "task"),
     "unknown": None,
 }
 
@@ -205,6 +205,26 @@ def build_synthetic(name: str = "synthetic") -> list[dict]:
     return [json.loads(line) for line in path.read_text().splitlines()] if path.exists() else []
 
 
+def apply_overrides(examples: list[dict]) -> None:
+    """Подменяет эталон сгенерированных примеров исправлениями из gold_overrides.yaml.
+
+    Исправления хранятся отдельно, чтобы генератор и его кэш не менялись и пересборка
+    из кэша оставалась воспроизводимой. Split не пересчитывается.
+    """
+    path = SOURCE / "gold_overrides.yaml"
+    overrides = (
+        {raw["id"]: raw for raw in yaml.safe_load(path.read_text())} if path.exists() else {}
+    )
+    for example in examples:
+        if raw := overrides.pop(example["id"], None):
+            fixed = make_example({**raw, "text": example["text"]}, example["source"], example)
+            for field in ("outcome", "items", "missing", "answer_window", "calendar", "tags"):
+                example[field] = fixed[field]
+            example["meta"]["changed_after_generation"] = raw["reason"]
+    if overrides:
+        raise SystemExit(f"исправления для неизвестных примеров: {sorted(overrides)}")
+
+
 def assign_splits(examples: list[dict], seed: int = SPLIT_SEED) -> None:
     """Делит на dev и test со стратификацией по источнику, исходу и наличию списка.
 
@@ -245,6 +265,8 @@ def main() -> None:
 
     sets["synthetic_wave2"] = build_synthetic("synthetic_wave2")
     assign_splits(sets["synthetic_wave2"], seed=SPLIT_SEED + 1)
+    # Исправления эталона применяются после деления, чтобы замороженный split не сдвинулся.
+    apply_overrides(sets["synthetic"] + sets["synthetic_wave2"])
     for name, examples in sets.items():
         if examples:
             write(examples, PROCESSED / f"{name}.jsonl")

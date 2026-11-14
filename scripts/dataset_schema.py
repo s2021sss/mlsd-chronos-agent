@@ -4,7 +4,7 @@ from datetime import date, datetime
 from zoneinfo import ZoneInfo
 
 OUTCOMES = {"plan", "answer", "clarify", "unsupported"}
-OPS = {"create", "update", "delete"}
+OPS = {"create", "update", "delete", "complete"}
 TYPES = {"event", "task", "reminder"}
 SOURCES = {"seed_llm", "imitated_user", "synthetic_llm", "massive"}
 LABEL_STATUSES = {"full", "weak"}
@@ -66,6 +66,8 @@ def _check_item(item: dict, example: dict, now: datetime, errors: list[str], lab
     if not item.get("span") or item["span"] not in example["text"]:
         errors.append(f"{label}: span не найден в тексте: {item.get('span')!r}")
 
+    if op == "complete" and kind != "task":
+        errors.append(f"{label}: выполненной можно отметить только задачу")
     target = item.get("target")
     if op == "create":
         if target is not None:
@@ -77,9 +79,9 @@ def _check_item(item: dict, example: dict, now: datetime, errors: list[str], lab
         elif entry["type"] != kind or entry["title"] != item.get("title"):
             errors.append(f"{label}: тип или title расходятся с записью {target}")
 
-    if op == "delete":
+    if op in {"delete", "complete"}:
         if any(item.get(field) is not None for field in ("start", "end", "remind")):
-            errors.append(f"{label}: у delete нет времени")
+            errors.append(f"{label}: у {op} нет времени")
     else:
         _check_when(item, now, errors, label)
 

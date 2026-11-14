@@ -18,3 +18,4 @@ repos:
     rev: 0.9.1
     hooks:
       - id: nbstripout
+        exclude: ^notebooks/01_eda\.ipynb$

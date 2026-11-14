@@ -30,9 +30,12 @@ examples:
     items:
       - {op: create, type: task, title: "Купить продукты", start: "2026-11-10", span: "Сегодня надо будет купить продукты"}
   - id: HP-007
-    outcome: unsupported
-    changed_from_seed: "В схеме из раздела 2.1 нет операции завершения задачи"
+    outcome: plan
     tags: [complete_task]
+    calendar:
+      - {id: t1, type: task, title: "Купить продукты", start: "2026-11-10"}
+    items:
+      - {op: complete, type: task, title: "Купить продукты", target: t1, span: "задачу «купить продукты»"}
   - id: HP-008
     outcome: plan
     items:
@@ -96,9 +99,12 @@ examples:
     items:
       - {op: update, type: event, title: "Встреча с клиентом", target: ev1, start: "2026-11-12T15:00:00+03:00", end: "2026-11-12T16:00:00+03:00", span: "встречу с клиентом на четверг в 15:00"}
   - id: ME-002
-    outcome: unsupported
-    changed_from_seed: "В схеме из раздела 2.1 нет операции завершения задачи"
+    outcome: plan
     tags: [complete_task]
+    calendar:
+      - {id: t1, type: task, title: "Сдать отчёт", start: "2026-11-13"}
+    items:
+      - {op: complete, type: task, title: "Сдать отчёт", target: t1, span: "задачу «сдать отчёт»"}
   - id: ME-003
     outcome: plan
     calendar:
@@ -106,9 +112,12 @@ examples:
     items:
       - {op: update, type: event, title: "Утренний стендап", target: ev1, start: "2026-11-18T10:00:00+03:00", end: "2026-11-18T10:30:00+03:00", span: "утренний стендап на следующую среду в 10 утра"}
   - id: ME-004
-    outcome: unsupported
-    changed_from_seed: "В схеме из раздела 2.1 нет операции завершения задачи"
+    outcome: plan
     tags: [complete_task]
+    calendar:
+      - {id: t1, type: task, title: "Подготовить слайды", start: "2026-11-12"}
+    items:
+      - {op: complete, type: task, title: "Подготовить слайды", target: t1, span: "«подготовить слайды»"}
   - id: OOS-001
     outcome: unsupported
   - id: OOS-002

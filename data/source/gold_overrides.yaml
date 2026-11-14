@@ -1,0 +1,12 @@
+# Исправления эталона сгенерированных примеров. Генератор и его кэш не меняются, чтобы
+# пересборка из кэша оставалась воспроизводимой, а scripts/build_datasets.py применяет
+# эти записи поверх data/source/synthetic*.jsonl.
+
+- id: SYN-197
+  reason: "Отметка задачи выполненной добавлена в схему после генерации, раньше эталон был unsupported"
+  outcome: plan
+  tags: [complete_task, note_style]
+  calendar:
+    - {id: t1, type: task, title: "Сдать отчёт", start: "2026-11-06"}
+  items:
+    - {op: complete, type: task, title: "Сдать отчёт", target: t1, span: "ту задачу с отчётом"}

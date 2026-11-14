@@ -242,6 +242,9 @@ def write(examples: list[dict], path: Path) -> None:
 def main() -> None:
     sets = {"seed": build_seed(), "imitated_user": build_imitated(), "synthetic": build_synthetic()}
     assign_splits([example for examples in sets.values() for example in examples])
+
+    sets["synthetic_wave2"] = build_synthetic("synthetic_wave2")
+    assign_splits(sets["synthetic_wave2"], seed=SPLIT_SEED + 1)
     for name, examples in sets.items():
         if examples:
             write(examples, PROCESSED / f"{name}.jsonl")

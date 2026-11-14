@@ -1,0 +1,132 @@
+# Полный эталон для seed-набора nlu_dataset.yaml в схеме проекта.
+# changed_from_seed объясняет, почему эталон расходится с ожиданиями seed-набора
+defaults:
+  now: "2026-11-10T10:00:00+03:00" # вторник
+  timezone: Europe/Moscow
+
+examples:
+  - id: HP-001
+    outcome: plan
+    items:
+      - {op: create, type: event, title: "Встреча с командой", start: "2026-11-11T10:00:00+03:00", end: "2026-11-11T11:00:00+03:00", span: "встречу с командой завтра в 10 утра на час"}
+  - id: HP-002
+    outcome: plan
+    items:
+      - {op: create, type: event, title: "Звонок с Иваном", start: "2026-11-11T15:00:00+03:00", end: "2026-11-11T16:00:00+03:00", span: "звонок с Иваном в среду в 15:00"}
+  - id: HP-003
+    outcome: plan
+    items:
+      - {op: create, type: task, title: "Отправить квартальный отчёт", start: "2026-11-13", span: "отправить квартальный отчёт до пятницы"}
+  - id: HP-004
+    outcome: plan
+    items:
+      - {op: create, type: event, title: "Встреча с клиентом", start: "2026-11-12T14:00:00+03:00", end: "2026-11-12T16:00:00+03:00", span: "встречу с клиентом послезавтра в 14:00 на 2 часа"}
+  - id: HP-005
+    outcome: plan
+    items:
+      - {op: create, type: event, title: "Тренировка", start: "2026-11-11T07:00:00+03:00", end: "2026-11-11T08:00:00+03:00", span: "тренировку на завтра в 7 утра"}
+  - id: HP-006
+    outcome: plan
+    items:
+      - {op: create, type: task, title: "Купить продукты", start: "2026-11-10", span: "Сегодня надо будет купить продукты"}
+  - id: HP-007
+    outcome: unsupported
+    changed_from_seed: "В схеме из раздела 2.1 нет операции завершения задачи"
+    tags: [complete_task]
+  - id: HP-008
+    outcome: plan
+    items:
+      - {op: create, type: event, title: "Стендап", start: "2026-11-10T22:00:00+03:00", end: "2026-11-10T23:00:00+03:00", span: "стендап на сегодня в 10 часов вечера на час"}
+  - id: HP-009
+    outcome: plan
+    calendar:
+      - {id: ev1, type: event, title: "Стендап", start: "2026-11-10T11:00:00+03:00", end: "2026-11-10T11:30:00+03:00"}
+    items:
+      - {op: update, type: event, title: "Стендап", target: ev1, start: "2026-11-11T09:00:00+03:00", end: "2026-11-11T09:30:00+03:00", span: "стендап на завтра в 9 утра"}
+  - id: HP-010
+    outcome: plan
+    items:
+      - {op: create, type: task, title: "Подготовить презентацию для совета директоров", start: "2026-11-12", span: "подготовить презентацию для совета директоров, срок — послезавтра"}
+  - id: RD-001
+    outcome: plan
+    items:
+      - {op: create, type: event, title: "Встреча с партнёрами", start: "2026-11-13T19:00:00+03:00", end: "2026-11-13T20:00:00+03:00", span: "Встреча с партнёрами в пятницу вечером"}
+  - id: RD-002
+    outcome: plan
+    items:
+      - {op: create, type: event, title: "Созвон с командой", start: "2026-11-16T09:00:00+03:00", end: "2026-11-16T10:00:00+03:00", span: "Созвон с командой в понедельник с утра"}
+  - id: RD-003
+    outcome: plan
+    items:
+      - {op: create, type: event, title: "Встреча с юристом", start: "2026-11-10T12:00:00+03:00", end: "2026-11-10T13:00:00+03:00", span: "встречу с юристом через 2 часа"}
+  - id: RD-004
+    outcome: plan
+    changed_from_seed: "В схеме есть тип reminder, а слово «напомни» с временем задаёт напоминание"
+    items:
+      - {op: create, type: reminder, title: "Позвонить врачу", start: "2026-11-11T13:00:00+03:00", span: "позвонить врачу завтра днём"}
+  - id: RD-005
+    outcome: plan
+    items:
+      - {op: create, type: event, title: "Собрание с отделом маркетинга", start: "2026-11-16T10:00:00+03:00", end: "2026-11-16T11:00:00+03:00", span: "Собрание с отделом маркетинга в следующий понедельник в 10 утра"}
+  - id: RD-006
+    outcome: plan
+    items:
+      - {op: create, type: task, title: "Сдать проект", start: "2026-11-13", span: "сдать проект через 3 дня"}
+  - id: TE-001
+    outcome: plan
+    tags: [end_of_week_is_sunday]
+    items:
+      - {op: create, type: task, title: "Написать документацию по API", start: "2026-11-15", span: "написать документацию по API до конца недели"}
+  - id: TE-002
+    outcome: plan
+    items:
+      - {op: create, type: event, title: "Созвон с командой", start: "2026-11-11T16:00:00+03:00", end: "2026-11-11T17:00:00+03:00", span: "Созвон с командой в 16:00 завтра"}
+  - id: TE-003
+    outcome: clarify
+    missing: [start]
+    changed_from_seed: "По разделу 1.4 без даты бот задаёт уточняющий вопрос, а не создаёт задачу"
+  - id: TE-004
+    outcome: plan
+    items:
+      - {op: create, type: event, title: "Собеседование", start: "2026-11-11T11:00:00+03:00", end: "2026-11-11T12:30:00+03:00", span: "Собеседование завтра в 11:00 на полтора часа"}
+  - id: ME-001
+    outcome: plan
+    calendar:
+      - {id: ev1, type: event, title: "Встреча с клиентом", start: "2026-11-11T12:00:00+03:00", end: "2026-11-11T13:00:00+03:00"}
+    items:
+      - {op: update, type: event, title: "Встреча с клиентом", target: ev1, start: "2026-11-12T15:00:00+03:00", end: "2026-11-12T16:00:00+03:00", span: "встречу с клиентом на четверг в 15:00"}
+  - id: ME-002
+    outcome: unsupported
+    changed_from_seed: "В схеме из раздела 2.1 нет операции завершения задачи"
+    tags: [complete_task]
+  - id: ME-003
+    outcome: plan
+    calendar:
+      - {id: ev1, type: event, title: "Утренний стендап", start: "2026-11-11T09:30:00+03:00", end: "2026-11-11T10:00:00+03:00"}
+    items:
+      - {op: update, type: event, title: "Утренний стендап", target: ev1, start: "2026-11-18T10:00:00+03:00", end: "2026-11-18T10:30:00+03:00", span: "утренний стендап на следующую среду в 10 утра"}
+  - id: ME-004
+    outcome: unsupported
+    changed_from_seed: "В схеме из раздела 2.1 нет операции завершения задачи"
+    tags: [complete_task]
+  - id: OOS-001
+    outcome: unsupported
+  - id: OOS-002
+    outcome: unsupported
+  - id: OOS-003
+    outcome: unsupported
+  - id: OOS-004
+    outcome: unsupported
+  - id: EC-001
+    outcome: clarify
+    missing: [start]
+    tags: [invalid_time]
+  - id: EC-002
+    outcome: unsupported
+  - id: EC-003
+    outcome: clarify
+    missing: [title, start]
+  - id: EC-004
+    outcome: plan
+    items:
+      - {op: create, type: event, title: "Встреча с клиентом из ABC Technologies", start: "2026-11-16T10:00:00+03:00", end: "2026-11-16T11:00:00+03:00", span: "встречу с ключевым клиентом из компании ABC Technologies"}

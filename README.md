@@ -31,6 +31,10 @@ Google Calendar API и Google Tasks API.
 
 ```text
 docs/                         # дизайн-документ
+data/                         # наборы для оценки, источники в data/README.md
+notebooks/                    # EDA
+reports/                      # выводы EDA (eda.md) и графики
+scripts/                      # загрузка и подготовка данных
 src/chronos_agent/            # код сервиса
 pyproject.toml                # зависимости и настройки ruff
 uv.lock                       # зафиксированные версии зависимостей
@@ -48,3 +52,13 @@ uv run pre-commit install        # хуки на каждый коммит
 uv run pre-commit run --all-files
 uv run ruff check . && uv run ruff format --check .
 ```
+
+Данные для оценки (подробнее в [data/README.md](data/README.md)):
+
+```bash
+uv run python scripts/download_massive.py       # MASSIVE, русская часть
+uv run python scripts/generate_synthetic.py     # синтетика, нужны LLM_* из .env.example
+uv run python scripts/build_datasets.py         # сборка, проверка, dev и test
+```
+
+EDA: [notebooks/01_eda.ipynb](notebooks/01_eda.ipynb), выводы в [reports/eda.md](reports/eda.md).

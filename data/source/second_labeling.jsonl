@@ -1,0 +1,50 @@
+{"id": "IM-015", "outcome": "plan", "items": [{"op": "create", "type": "event", "title": "Встреча с Аней", "start": "2026-11-11T14:00:00+03:00", "end": "2026-11-11T15:00:00+03:00"}], "missing": []}
+{"id": "IM-028", "outcome": "plan", "items": [{"op": "create", "type": "task", "title": "Отправить отчёт", "start": "2026-11-13"}, {"op": "create", "type": "task", "title": "Позвонить в банк", "start": "2026-11-13"}, {"op": "create", "type": "task", "title": "Забрать куртку из химчистки", "start": "2026-11-13"}], "missing": []}
+{"id": "SYN-159", "outcome": "plan", "items": [{"op": "delete", "type": "event", "title": "Созвон с Петей", "target": "ev1"}], "missing": []}
+{"id": "IM-004", "outcome": "plan", "items": [{"op": "create", "type": "event", "title": "Обед с мамой", "start": "2026-11-12T12:00:00+03:00", "end": "2026-11-12T13:00:00+03:00"}], "missing": []}
+{"id": "SYN-248", "outcome": "plan", "items": [{"op": "update", "type": "event", "title": "Бассейн", "target": "ev1", "start": "2026-11-20T18:15:00+03:00", "end": "2026-11-20T18:45:00+03:00"}], "missing": []}
+{"id": "SYN-100", "outcome": "unsupported", "items": [], "missing": []}
+{"id": "SYN-041", "outcome": "plan", "items": [{"op": "create", "type": "event", "title": "Планёрка", "start": "2026-11-16T12:15:00+03:00", "end": "2026-11-16T13:15:00+03:00"}], "missing": []}
+{"id": "SYN-056", "outcome": "plan", "items": [{"op": "create", "type": "event", "title": "Встреча с риелтором", "start": "2026-11-06T14:00:00+03:00", "end": "2026-11-06T15:00:00+03:00"}], "missing": []}
+{"id": "SYN-111", "outcome": "clarify", "items": [], "missing": ["title"]}
+{"id": "SYN-175", "outcome": "plan", "items": [{"op": "create", "type": "event", "title": "Репетитор по математике", "start": "2026-11-14T19:00:00+03:00", "end": "2026-11-14T20:00:00+03:00"}], "missing": []}
+{"id": "SYN-191", "outcome": "clarify", "items": [], "missing": ["target"]}
+{"id": "SYN-027", "outcome": "plan", "items": [{"op": "create", "type": "task", "title": "Оплатить кружок", "start": "2026-11-22"}], "missing": []}
+{"id": "SYN-008", "outcome": "clarify", "items": [], "missing": ["start"]}
+{"id": "IM-035", "outcome": "plan", "items": [{"op": "create", "type": "task", "title": "Купить цветы", "start": "2026-11-10"}, {"op": "create", "type": "task", "title": "Забрать заказ", "start": "2026-11-10"}, {"op": "create", "type": "task", "title": "Оплатить штраф", "start": "2026-11-10"}, {"op": "create", "type": "task", "title": "Написать хозяйке квартиры", "start": "2026-11-10"}, {"op": "create", "type": "task", "title": "Заказать воду", "start": "2026-11-10"}], "missing": []}
+{"id": "IM-061", "outcome": "unsupported", "items": [], "missing": []}
+{"id": "SYN-118", "outcome": "clarify", "items": [], "missing": ["start"]}
+{"id": "SYN-233", "outcome": "plan", "items": [{"op": "create", "type": "event", "title": "Ужин с друзьями", "start": "2026-11-24T18:30:00+03:00", "end": "2026-11-24T19:30:00+03:00"}], "missing": []}
+{"id": "IM-048", "outcome": "answer", "items": [], "missing": []}
+{"id": "SYN-138", "outcome": "plan", "items": [{"op": "create", "type": "event", "title": "Приём у терапевта", "start": "2026-11-24T21:15:00+03:00", "end": "2026-11-24T22:15:00+03:00"}], "missing": []}
+{"id": "SYN-007", "outcome": "plan", "items": [{"op": "create", "type": "task", "title": "Оплатить интернет", "start": "2026-11-06"}], "missing": []}
+{"id": "SYN-089", "outcome": "plan", "items": [{"op": "create", "type": "task", "title": "Оплатить кружок", "start": "2026-11-11"}], "missing": []}
+{"id": "IM-006", "outcome": "plan", "items": [{"op": "create", "type": "task", "title": "Забрать посылку с Озона", "start": "2026-11-12"}], "missing": []}
+{"id": "SYN-163", "outcome": "answer", "items": [], "missing": []}
+{"id": "SYN-073", "outcome": "clarify", "items": [], "missing": ["start"]}
+{"id": "IM-044", "outcome": "plan", "items": [{"op": "update", "type": "event", "title": "Созвон с Аней", "target": "ev1", "start": "2026-11-11T16:00:00+03:00", "end": "2026-11-11T17:00:00+03:00"}], "missing": []}
+{"id": "SYN-112", "outcome": "plan", "items": [{"op": "update", "type": "event", "title": "Репетитор по математике", "target": "ev1", "start": "2026-11-24T12:00:00+03:00", "end": "2026-11-24T13:00:00+03:00"}], "missing": []}
+{"id": "IM-032", "outcome": "plan", "items": [{"op": "create", "type": "task", "title": "Оплатить коммуналку", "start": "2026-11-20"}, {"op": "create", "type": "task", "title": "Записать кота к ветеринару", "start": "2026-11-30"}], "missing": []}
+{"id": "SYN-207", "outcome": "clarify", "items": [], "missing": ["target"]}
+{"id": "SYN-040", "outcome": "plan", "items": [{"op": "create", "type": "event", "title": "Кино с Лерой", "start": "2026-11-19T20:30:00+03:00", "end": "2026-11-19T22:00:00+03:00"}], "missing": []}
+{"id": "SYN-148", "outcome": "clarify", "items": [], "missing": ["start"]}
+{"id": "SYN-221", "outcome": "plan", "items": [{"op": "create", "type": "reminder", "title": "Позвонить маме", "start": "2026-11-02T19:00:00+03:00"}], "missing": []}
+{"id": "SYN-249", "outcome": "plan", "items": [{"op": "create", "type": "reminder", "title": "Вынести мусор", "start": "2026-11-05T19:00:00+03:00"}], "missing": []}
+{"id": "IM-003", "outcome": "plan", "items": [{"op": "create", "type": "event", "title": "Визит к врачу", "start": "2026-11-12T09:00:00+03:00", "end": "2026-11-12T10:00:00+03:00"}], "missing": []}
+{"id": "SYN-088", "outcome": "clarify", "items": [], "missing": ["start"]}
+{"id": "IM-067", "outcome": "unsupported", "items": [], "missing": []}
+{"id": "IM-038", "outcome": "plan", "items": [{"op": "delete", "type": "event", "title": "Созвон с Петей", "target": "ev1"}], "missing": []}
+{"id": "SYN-220", "outcome": "plan", "items": [{"op": "create", "type": "task", "title": "Отправить отчёт", "start": "2026-11-12"}], "missing": []}
+{"id": "SYN-051", "outcome": "plan", "items": [{"op": "create", "type": "reminder", "title": "Выпить таблетки", "start": "2026-11-12T11:30:00+03:00"}], "missing": []}
+{"id": "SYN-060", "outcome": "answer", "items": [], "missing": []}
+{"id": "SYN-206", "outcome": "answer", "items": [], "missing": []}
+{"id": "IM-009", "outcome": "plan", "items": [{"op": "create", "type": "task", "title": "Позвонить маме", "start": "2026-11-11"}], "missing": []}
+{"id": "SYN-195", "outcome": "plan", "items": [{"op": "delete", "type": "event", "title": "Приём у терапевта", "target": "ev1"}], "missing": []}
+{"id": "IM-007", "outcome": "plan", "items": [{"op": "create", "type": "task", "title": "Купить корм коту", "start": "2026-11-14"}], "missing": []}
+{"id": "SYN-002", "outcome": "plan", "items": [{"op": "create", "type": "event", "title": "Родительское собрание", "start": "2026-11-06T15:00:00+03:00", "end": "2026-11-06T16:00:00+03:00"}], "missing": []}
+{"id": "SYN-057", "outcome": "plan", "items": [{"op": "create", "type": "reminder", "title": "Полить цветы", "start": "2026-11-03T15:45:00+03:00"}, {"op": "create", "type": "event", "title": "Стоматолог", "start": "2026-11-05T11:30:00+03:00", "end": "2026-11-05T12:30:00+03:00"}, {"op": "create", "type": "task", "title": "Написать научруку", "start": "2026-11-04"}], "missing": []}
+{"id": "IM-036", "outcome": "plan", "items": [{"op": "update", "type": "event", "title": "Созвон с Петей", "target": "ev1", "start": "2026-11-11T17:00:00+03:00", "end": "2026-11-11T18:00:00+03:00"}], "missing": []}
+{"id": "SYN-024", "outcome": "answer", "items": [], "missing": []}
+{"id": "SYN-189", "outcome": "plan", "items": [{"op": "create", "type": "event", "title": "Планёрка", "start": "2026-11-26T14:00:00+03:00", "end": "2026-11-26T16:00:00+03:00"}], "missing": []}
+{"id": "SYN-025", "outcome": "plan", "items": [{"op": "create", "type": "task", "title": "Заменить масло в машине", "start": "2026-11-24"}], "missing": []}
+{"id": "SYN-152", "outcome": "plan", "items": [{"op": "create", "type": "event", "title": "Планёрка", "start": "2026-11-09T19:00:00+03:00", "end": "2026-11-09T20:00:00+03:00"}, {"op": "create", "type": "reminder", "title": "Выпить таблетки", "start": "2026-11-09T14:00:00+03:00"}], "missing": []}

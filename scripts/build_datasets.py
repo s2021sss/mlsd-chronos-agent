@@ -132,6 +132,11 @@ def build_seed() -> list[dict]:
     return examples
 
 
+def build_imitated() -> list[dict]:
+    data = yaml.safe_load((SOURCE / "imitated_user.yaml").read_text())
+    return [make_example(raw, "imitated_user", data["defaults"]) for raw in data["examples"]]
+
+
 def massive_outcome(intent: str, slots: set[str]) -> str:
     action = intent.split("_")[1]
     if action == "query":
@@ -230,7 +235,7 @@ def write(examples: list[dict], path: Path) -> None:
 
 
 def main() -> None:
-    sets = {"seed": build_seed()}
+    sets = {"seed": build_seed(), "imitated_user": build_imitated()}
     assign_splits([example for examples in sets.values() for example in examples])
     for name, examples in sets.items():
         if examples:

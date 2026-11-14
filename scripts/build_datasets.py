@@ -200,6 +200,11 @@ def build_massive() -> list[dict]:
     return examples
 
 
+def build_synthetic(name: str = "synthetic") -> list[dict]:
+    path = SOURCE / f"{name}.jsonl"
+    return [json.loads(line) for line in path.read_text().splitlines()] if path.exists() else []
+
+
 def assign_splits(examples: list[dict], seed: int = SPLIT_SEED) -> None:
     """Делит на dev и test со стратификацией по источнику, исходу и наличию списка.
 
@@ -235,7 +240,7 @@ def write(examples: list[dict], path: Path) -> None:
 
 
 def main() -> None:
-    sets = {"seed": build_seed(), "imitated_user": build_imitated()}
+    sets = {"seed": build_seed(), "imitated_user": build_imitated(), "synthetic": build_synthetic()}
     assign_splits([example for examples in sets.values() for example in examples])
     for name, examples in sets.items():
         if examples:

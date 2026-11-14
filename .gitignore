@@ -14,6 +14,7 @@ secrets/
 
 # Локальные данные и артефакты
 data/raw/
+data/interim/
 *.sqlite
 *.sqlite3
 *.db
